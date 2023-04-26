@@ -36,7 +36,6 @@ const Recipe = () => {
     <div className="popup">
       <NavLink to="/" className="back-link">{'<<'}</NavLink>
       <div className="recipe">
-        <h3 className="meal-detail">Meal Detail</h3>
         <img src={recipe.strMealThumb} alt={recipe.strMeal} />
         <h2>{recipe.strMeal}</h2>
         <p>{recipe.strInstructions}</p>

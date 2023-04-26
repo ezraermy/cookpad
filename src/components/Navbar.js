@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const links = [];
   return (
-    <div className="navbar">
+    <div className="navbar" data-testid="navbar">
       <h1 className="cookpad-title">CookPad</h1>
       <ul>
         {links.map((link) => (
