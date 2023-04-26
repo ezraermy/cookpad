@@ -1,4 +1,3 @@
-// dishesSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchDishes = createAsyncThunk('dishes/fetchDishes', async () => {

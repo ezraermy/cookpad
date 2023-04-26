@@ -2,21 +2,39 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDishes } from 'redux/dishes/dishesSlice';
 import { fetchRecipe } from 'redux/recipe/recipeSlice';
-import Recipe from './Recipe';
+import { useNavigate } from 'react-router-dom';
+import './styles/Dishes.css';
 
 const Dishes = () => {
   const dispatch = useDispatch();
   const { dishes, status, error } = useSelector((state) => state.dishes);
   const [selectedDish, setSelectedDish] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchDishes());
   }, [dispatch]);
 
   const handleDetailClick = (id) => {
+    if (id === selectedDish) {
+      return;
+    }
     dispatch(fetchRecipe(id));
     setSelectedDish(id);
+    navigate(`/recipe?id=${id}`);
   };
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredDishes = dishes.filter((dish) => {
+    const dishName = dish.strMeal.toLowerCase();
+    const dishLetter = dish.strMeal.charAt(0).toLowerCase();
+    const query = searchQuery.toLowerCase();
+    return dishName.includes(query) || dishLetter === query;
+  });
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -33,20 +51,27 @@ const Dishes = () => {
 
   return (
     <main>
-      <div className="row">
-        {dishes.map((dish) => (
-          <div key={dish.idMeal} className="col-md-4 mt-3 mb-3">
-            <div className="card">
-              <img src={dish.strMealThumb} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{dish.strMeal}</h5>
-                <button type="button" onClick={() => handleDetailClick(dish.idMeal)}>Detail</button>
-              </div>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search dishes by name or letter"
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+        />
+      </div>
+      <div className="dish-container">
+
+        {filteredDishes.map((dish) => (
+          <div key={dish.idMeal}>
+            <div className="dish-list">
+              <button type="button" onClick={() => handleDetailClick(dish.idMeal)}>
+                <img src={dish.strMealThumb || 'default-image.jpg'} alt="pic" className="dish-image" />
+              </button>
+              <h5 className="dish-title">{dish.strMeal}</h5>
             </div>
           </div>
         ))}
       </div>
-      {selectedDish && <Recipe id={selectedDish} />}
     </main>
   );
 };
