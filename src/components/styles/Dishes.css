@@ -1,8 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 @media only screen and (max-width: 768px) {
+  .wrapper {
+    background-image: url('/src/assets/bg4.jpg');
+  }
+
   .dish-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    margin: 2rem 1rem 1rem;
+  }
+
+  .cookpad-title {
+    text-align: center;
+    color: #0ff;
+    padding-top: 12px;
+  }
+
+  .search-bar {
+    background-color: #e9e9e9;
+    margin: 0 30px;
+    border-radius: 5px;
+    width: auto;
+  }
+
+  .search-bar a:active {
+    background-color: #2196f3;
+    color: white;
+  }
+
+  .search-term {
+    padding: 5px;
+    height: 20px;
+    border: #fff;
+    border-radius: 3px;
   }
 
   .dish-list {
@@ -10,7 +42,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 160px;
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
@@ -20,10 +52,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin: -8px;
   }
 
   .dish-title {
-    font-size: 10px;
+    font-size: 14px;
     margin-top: 0;
+    color: #0ff;
   }
 }

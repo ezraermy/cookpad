@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRecipe } from 'redux/recipe/recipeSlice';
-import { useLocation } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
+import './styles/Recipe.css';
 
 const Recipe = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ const Recipe = () => {
 
   return (
     <div className="popup">
+      <NavLink to="/" className="back-link">{'<<'}</NavLink>
       <div className="recipe">
+        <h3 className="meal-detail">Meal Detail</h3>
         <img src={recipe.strMealThumb} alt={recipe.strMeal} />
         <h2>{recipe.strMeal}</h2>
         <p>{recipe.strInstructions}</p>

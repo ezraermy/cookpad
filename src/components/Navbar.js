@@ -2,16 +2,16 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const links = [
-    { path: '/', text: '<' },
-  ];
+  const links = [];
   return (
-    <div>
-      <h1>CookPad</h1>
+    <div className="navbar">
+      <h1 className="cookpad-title">CookPad</h1>
       <ul>
         {links.map((link) => (
           <li key={link.text}>
-            <NavLink to={link.path}>{link.text}</NavLink>
+            <NavLink to={link.path} className="nav-link">
+              {link.text}
+            </NavLink>
           </li>
         ))}
       </ul>

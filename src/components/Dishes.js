@@ -53,8 +53,9 @@ const Dishes = () => {
     <main>
       <div className="search-bar">
         <input
+          className="search-term"
           type="text"
-          placeholder="Search dishes by name or letter"
+          placeholder="Search..."
           value={searchQuery}
           onChange={handleSearchInputChange}
         />
