@@ -67,7 +67,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Comming soon
+- [Cookpad](https://sensational-sunflower-32ca15.netlify.app/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
 

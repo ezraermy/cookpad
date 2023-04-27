@@ -132,6 +132,7 @@ const Recipe = () => {
           </li>
           )}
         </ul>
+        <hr />
       </div>
     </div>
   );
