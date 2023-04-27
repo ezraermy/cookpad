@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchDishes } from 'redux/dishes/dishesSlice';
 import { fetchRecipe } from 'redux/recipe/recipeSlice';
 import { useNavigate } from 'react-router-dom';
+import { FaRegThumbsUp } from 'react-icons/fa';
 import './styles/Dishes.css';
 
 const Dishes = () => {
@@ -10,11 +11,19 @@ const Dishes = () => {
   const { dishes, status, error } = useSelector((state) => state.dishes);
   const [selectedDish, setSelectedDish] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [likes, setLikes] = useState(() => {
+    const storedLikes = JSON.parse(localStorage.getItem('likes')) || {};
+    return storedLikes;
+  });
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchDishes());
   }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('likes', JSON.stringify(likes));
+  }, [likes]);
 
   const handleDetailClick = (id) => {
     if (id === selectedDish) {
@@ -27,6 +36,14 @@ const Dishes = () => {
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
+  };
+
+  const handleLikeClick = (id) => {
+    setLikes((prevLikes) => {
+      const newLikes = { ...prevLikes };
+      newLikes[id] = (newLikes[id] || 0) + 1;
+      return newLikes;
+    });
   };
 
   const filteredDishes = dishes.filter((dish) => {
@@ -61,7 +78,6 @@ const Dishes = () => {
         />
       </div>
       <div className="dish-container">
-
         {filteredDishes.map((dish) => (
           <div key={dish.idMeal}>
             <div className="dish-list">
@@ -69,6 +85,14 @@ const Dishes = () => {
                 <img src={dish.strMealThumb || 'default-image.jpg'} alt="pic" className="dish-image" />
               </button>
               <h5 className="dish-title">{dish.strMeal}</h5>
+              <div className="like-container">
+                <FaRegThumbsUp onClick={() => handleLikeClick(dish.idMeal)} className="like-icon" />
+                <span className="like-count">
+                  {likes[dish.idMeal] || 0}
+                  {' '}
+                  Likes
+                </span>
+              </div>
             </div>
           </div>
         ))}
