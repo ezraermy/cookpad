@@ -69,6 +69,10 @@
 
 - [Cookpad](https://sensational-sunflower-32ca15.netlify.app/)
 
+## 🚀 Video <a name="video"></a>
+
+- [Presenation](https://www.loom.com/share/f22ffd04ae5c42bd93a98f78eeacd3c8)
+
 <p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- Getting Started -->
