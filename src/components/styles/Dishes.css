@@ -56,7 +56,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin: -8px;
+    margin: -16px 0;
   }
 
   .dish-title {
@@ -72,7 +72,6 @@
     align-items: center;
     gap: 5px;
     font-size: 14px;
-    top: 20px;
   }
 
   .like-icon {
