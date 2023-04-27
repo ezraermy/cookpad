@@ -134,7 +134,7 @@ To run tests, run the following command:
 👤 **Ezra Yehuwalashet**
 
 - [<img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" width='20'/> Email](mailto:ezraermy@gmail.com)
-- [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" width='20'/> Twitter](https://twitter.com/ezraermy)
+- [<img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" width='20'/> Twitter](https://twitter.com/ezraermy)
 - [<img src="https://i.stack.imgur.com/gVE0j.png" width='20'/> LinkedIn](https://www.linkedin.com/in/ezra-yehuwalashet/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
