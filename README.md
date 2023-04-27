@@ -22,9 +22,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Space Travelers <a name="about-project"></a>
+# 📖 Cookpad <a name="about-project"></a>
 
-**Space Travelers** A beautiful website created using React js where users can reserve rockets and spaceships, it uses redux for managing the state and spacexapi for fetching the data.
+**Cookpad** The Cookpad web app is a user-friendly platform that provides a vast collection of recipes for different types of cuisines, diets, and occasions. Each recipe includes a list of ingredients, step-by-step instructions, and a mouth-watering image to give users an idea of what their dish will look like.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -35,14 +35,14 @@
   <ul>
    <li>React js</li>
    <li>Redux</li>
-   <li>Tailwind css</li>
+   <li>CSS</li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>SpaceX API</li>
+    <li>Mealdb API</li>
     <li>Node js</li>
   </ul>
 </details>
@@ -90,7 +90,7 @@ In order to run this project you need to:
 Clone the repo into your local machine:
 
 ```bash
-git clone https://github.com/ezraermy/space-travel.git
+git clone https://github.com/ezraermy/cookpad.git
 ```
 
 Install the dependencies using npm:
@@ -169,7 +169,9 @@ If you like this project leave a start for it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for helping me in my journey to become a Fullstack developer 🌹
+- I would like to thank Microverse for helping me in my journey to become a Fullstack developer 🌹
+
+- I would like to give credit to [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) for his original design idea that inspired the creation of this app. The overall layout and design of this app were heavily influenced by his work, and I am grateful for the inspiration he provided.
 
 <p align="right"><a href="#readme-top">👆</a></p>
 
