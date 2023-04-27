@@ -4,6 +4,7 @@
 @media only screen and (max-width: 768px) {
   .wrapper {
     background-image: url('/src/assets/bg4.jpg');
+    border-bottom: 6px solid rgb(80, 80, 78);
   }
 
   .dish-container {
