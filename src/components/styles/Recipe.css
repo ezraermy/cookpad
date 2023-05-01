@@ -6,13 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -54px;
+  margin-top: -5rem;
 }
 
 .back-link {
   position: absolute;
-  top: 53px;
   left: 38px;
+  top: 53px;
   text-decoration: none;
   font-size: 20px;
   color: #ccc;
